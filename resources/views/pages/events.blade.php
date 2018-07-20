@@ -11,8 +11,10 @@
 			<article>
 				<h3>{{ $event->name }}</h3>
 				<p>{{ $event->description}}</p>
-				<p>{{ $event->location }}</p>
-				<p>Lieu: {{ $event->price }} euros</p>
+				<p>Prix: {!! App\Helpers\EventHelper::formatPrice( $event ) !!} </p>
+				<p>Lieu: {{ $event->location }}</p>
+				<p>Date: {{ App\Helpers\EventHelper::formatDate( $event->starts_at ) }}</p>
+				{{-- <p>Date: {{ (new DateTime($event->starts_at))->format('d/m/Y H:i') }} </p> --}}
 			</article>
 			@if ( !$loop->last )
 				<hr>

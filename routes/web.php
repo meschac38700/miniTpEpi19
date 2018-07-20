@@ -18,17 +18,22 @@ use App\Event;
 Route::get('/events', function()
 {
 	/*Event::create([
-		'name'		 =>'Super concert de Saga Love',
-		'description'=> 'Super concert de Saga love à ne pas rater',
-		'price'		 => 20,
-		'location'	 => 'Paris'
+		'name'		 =>'Toto',
+		'description'=> 'Description Toto',
+		'price'		 => 0,
+		'location'	 => 'Dubai',
+		'starts_at'	 => new DateTime('+5 days')
 	]);
 	Event::create([
-		'name'		 =>'Symfony conference',
-		'description'=> 'Une conférence sur symfony avec Honoré Hounouanou à ne pas rater ! ',
-		'price'		 => 15,
-		'location'	 => 'Paris'
-	]);*/
+		'name'		 =>'Tata',
+		'description'=> 'Description Tata',
+		'price'		 => 0,
+		'location'	 => 'Lyon',
+		'starts_at'	 => new DateTime('+10 hours')
+	]);
+
+*/
+	/*Event::destry([3,4]); // supprimer les events avec id 3 et 4 dans la base*/
 	$events = Event::all();
 	return view('/pages/events', compact('events'));
 });
